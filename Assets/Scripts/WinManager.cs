@@ -23,8 +23,11 @@ public class WinManager : MonoBehaviour
     {
         if (transform.childCount == count - 1)
         {
-            food.OrderBy(go => go.transform.position.y);
-            GameObject highest = food.Last();
+           
+            food.OrderBy(quads => quads.transform.position.y).ToArray();
+
+            GameObject highest = GameObject.FindGameObjectsWithTag("Food").OrderByDescending(go => go.transform.position.y).First();
+            Debug.Log(highest.name+highest.transform.position.y);
             if (highest.name.Equals("Bread") || highest.name.Equals("Bread1"))
             {
                 Debug.Log("WİN");

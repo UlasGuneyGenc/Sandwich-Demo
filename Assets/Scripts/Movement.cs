@@ -35,6 +35,7 @@ public class Movement : MonoBehaviour
     
     void Update()
     {
+       // Debug.Log(gameObject.name + "    " + transform.position.y);
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out hit))
         {
